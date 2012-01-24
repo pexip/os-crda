@@ -1,0 +1,69 @@
+crda (1.1.2-1ubuntu1) precise; urgency=low
+
+  * Merge from Debian testing, remaining changes:
+    - Break/replace wireless-crda.
+    - Replace wireless-regdb 2011.04.28-1ubuntu1 and 2011.04.28-1ubuntu2 due
+      to a file conflict.
+
+ -- Steve Langasek <steve.langasek@ubuntu.com>  Tue, 24 Jan 2012 10:35:05 -0800
+
+crda (1.1.2-1) unstable; urgency=low
+
+  * New upstream version
+
+  [ Stefan Lippers-Hollmann ]
+  * switch to libnl3 3.2 and raise versioned build-dependency to (>= 3.2.3-2~),
+    to be able to expect it in /lib/.
+  * crda is specific to the linux kernel, restrict it to linux-any.
+  * bump standards version to 3.9.2, no changes necessary.
+
+  [ Ben Hutchings ]
+  * debian/control: Add references to git repository
+  * debian/control: Set Multi-Arch: foreign, thanks to Tim Gardner
+
+ -- Ben Hutchings <ben@decadent.org.uk>  Thu, 29 Dec 2011 02:41:08 +0100
+
+crda (1.1.1-1ubuntu5) precise; urgency=low
+
+  * Drop the provides: wireless-crda, as this confuses multiarch apt due
+    to the M-A: foreign field; the real wireless-crda package still in
+    universe that depends on crda satisfies the dep for old kernel packages
+    and the new kernel packages depend on crda directly, so it's no longer
+    needed here anyway.
+
+ -- Steve Langasek <steve.langasek@ubuntu.com>  Wed, 11 Jan 2012 17:39:09 +0100
+
+crda (1.1.1-1ubuntu4) precise; urgency=low
+
+  * debian/control: Build-depend on libnl-genl-3-dev
+  * debian/patches/libnl3.patch: (LP: #908464)
+    - Use pkg-config to determine NLLIBS
+
+ -- Andreas Moog <amoog@ubuntu.com>  Sat, 24 Dec 2011 22:28:49 +0100
+
+crda (1.1.1-1ubuntu3) precise; urgency=low
+
+  * Port to libnl3.
+
+ -- Colin Watson <cjwatson@ubuntu.com>  Sat, 26 Nov 2011 00:13:22 +0000
+
+crda (1.1.1-1ubuntu2) precise; urgency=low
+
+  * Provide/break/replace wireless-crda.
+  * Replace wireless-regdb 2011.04.28-1ubuntu1 and 2011.04.28-1ubuntu2 due
+    to a file conflict.
+
+ -- Colin Watson <cjwatson@ubuntu.com>  Fri, 25 Nov 2011 20:16:30 +0000
+
+crda (1.1.1-1ubuntu1) precise; urgency=low
+
+  * Make crda Multi-Arch: foreign
+
+ -- Tim Gardner <tim.gardner@canonical.com>  Mon, 21 Nov 2011 10:46:55 -0700
+
+crda (1.1.1-1) unstable; urgency=low
+
+  * Initial release (Closes: #536502)
+    - Most packaging was done by Kel Modderman and Stefan Lippers-Hollmann
+
+ -- Ben Hutchings <ben@decadent.org.uk>  Mon, 11 Apr 2011 13:18:35 +0100
